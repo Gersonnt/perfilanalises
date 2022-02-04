@@ -39,15 +39,20 @@ class  Questions extends Component {
     render(){
 
         function onSubmit(e) {
-            e.preventDefault();
-            emailjs.sendForm('service_1enkxen', 'template_ydmyun9', e.target, 'user_kBs8m9T2EoaDaI8yVqXbh')
-            .then((result) => {
-            alert('Obrigado por responder, entraremos em contato em breve!');
-            }, (error) => {
-            alert('Erro');
-            });
-            
+            if(gato + lobo + aguia + tubarao === 100){    
+                e.preventDefault();
+                emailjs.sendForm('service_1enkxen', 'template_ydmyun9', e.target, 'user_kBs8m9T2EoaDaI8yVqXbh')
+                .then((result) => {
+                alert('Obrigado por responder, entraremos em contato em breve!');
+                }, (error) => {
+                alert('Erro');
+                });
+            }else{
+                e.preventDefault();
+                alert('Por favor, responda à todas as perguntas antes de enviar!')
             }
+            
+        }
 
         const {
         q1,
