@@ -2,6 +2,7 @@ import { Component } from "react/cjs/react.production.min";
 import logoImg from '../logo-l3a.jfif'
 import emailjs from 'emailjs-com'
 
+
 class  Questions extends Component {
     state = {
         q1 : "x",
@@ -34,22 +35,25 @@ class  Questions extends Component {
     onChange = e =>{
     this.setState({[e.target.name] : e.target.value})
     };
-
+    
 
     render(){
 
         function onSubmit(e) {
             if(gato + lobo + aguia + tubarao === 100){    
-                e.preventDefault();
+                e.preventDefault(); 
                 emailjs.sendForm('service_1enkxen', 'template_ydmyun9', e.target, 'user_kBs8m9T2EoaDaI8yVqXbh')
-                .then((result) => {
-                alert('Obrigado por responder, entraremos em contato em breve!');
+                .then((result) => {  
+                     
+                    alert('Obrigado por responder, entraremos em contato em breve!');
+                    // eslint-disable-next-line
+                    setTimeout("location.href = 'http://www.l3asistemas.com.br';",100);               
                 }, (error) => {
-                alert('Erro');
+                    alert('Erro');
                 });
             }else{
-                e.preventDefault();
-                alert('Por favor, responda à todas as perguntas antes de enviar!')
+                    e.preventDefault();
+                    alert('Por favor, responda à todas as perguntas antes de enviar!')
             }
             
         }
@@ -88,10 +92,13 @@ class  Questions extends Component {
         var aguia = 0;
         var gato = 0;
         var tubarao = 0;
+
+        
+        
         
 
         function resultadoPerfil(){
-            
+
             for(let i = 0; i < 26; i++){
                 if(isActive[i] === "I" & i < 25){
                     aguia = aguia + 1;
@@ -121,10 +128,10 @@ class  Questions extends Component {
         return (
             
         
-            <div class='App'>
+            <div className='App'>
             <form onSubmit={onSubmit}>
                 <header className="App-header">
-                    <h1><a href="http://www.l3asistemas.com.br"><img alt="L3A Engenharia" class="logo" src={logoImg}></img></a></h1>
+                    <h1><a href="http://www.l3asistemas.com.br"><img alt="L3A Engenharia" className="logo" src={logoImg}></img></a></h1>
                 </header>
                 <div>
                     <h2>Eu sou...</h2>
@@ -135,7 +142,7 @@ class  Questions extends Component {
                             checked={q1 === "I" ? isActive[0] = q1 : ""}
                             onChange={this.onChange}
                         
-                        /><label> Idealista, criativo e visionário</label><br></br>
+                        /><label>Idealista, criativo e visionário</label><br></br>
 
                     <input  type="radio"
                             value="C"
@@ -943,8 +950,8 @@ class  Questions extends Component {
 
                     <input className="enviar" type="submit" 
                                 value="Enviar" 
-                                onChange={onSubmit} 
-                                onClick={resultadoPerfil()}/>
+                                onChange={resultadoPerfil()}
+                                />
                                 
                     <input type='hidden'  name="aguia" value={aguia}/>
                     <input type='hidden'  name="lobo" value={lobo}/>
@@ -952,12 +959,11 @@ class  Questions extends Component {
                     <input type='hidden'  name="gato" value={gato}/>
                     <input type='hidden' value={personName}/>
                     
-    
+                    
                     
                 
                 </div>    
             </form>
-            
             </div>
 
         )

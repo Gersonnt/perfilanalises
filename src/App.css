@@ -4,6 +4,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   
   color: antiquewhite;
 }
@@ -44,9 +45,11 @@ label {
   margin: 2rem;
   margin-left: 0.4rem;
   padding-top: -1rem;
+  width: 100%;
 }
 
 input {
+  width: auto;
   margin: 0.8rem;
   vertical-align: middle;
   display: inline-block;
@@ -55,6 +58,7 @@ input {
 }
 
 input.name{
+  width: auto;
   text-align: center;
   border-color: #b30b0b;
   border-radius: 0.25rem;
@@ -73,7 +77,7 @@ input.enviar{
 
 
 .react-overlay{
-  background: rgba(255, 253, 253, 0.842);
+  background: rgba(7, 5, 5, 0.582);
 
   position: fixed;
   top: 0;
