@@ -133,6 +133,7 @@ class  Questions extends Component {
                 <header className="App-header">
                     <h1><a href="http://www.l3asistemas.com.br"><img alt="L3A Engenharia" className="logo" src={logoImg}></img></a></h1>
                 </header>
+                <div className="form-edit">
                 <div>
                     <h2>Eu sou...</h2>
                     
@@ -943,16 +944,19 @@ class  Questions extends Component {
                         /><label> Se você não tem condições de competir, não compita</label><br></br>
                     <br>
                     </br>
+                    </div> 
+                    <div className="button-div">
                     <input  className="name" type="text" placeholder="Nome Completo" 
                             name="personName"
                             value={this.state.value} 
                             onChange={this.onChange}/>
-
+                    <br></br>
                     <input className="enviar" type="submit" 
                                 value="Enviar" 
                                 onChange={resultadoPerfil()}
-                                />
-                                
+                    />
+                    
+                    </div>            
                     <input type='hidden'  name="aguia" value={aguia}/>
                     <input type='hidden'  name="lobo" value={lobo}/>
                     <input type='hidden'  name="tubarao" value={tubarao}/>

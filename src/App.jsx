@@ -8,7 +8,7 @@ Modal.setAppElement('#root');
 
 export default function App(){
   
-    var totalHours = 0;
+    var totalHours =0;
 
     const [isModalOpen, setIsModalOpen] = useState(true);
     function handleCloseModal(){

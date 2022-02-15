@@ -1,11 +1,14 @@
 
-.App{
-  background-image:url("background.jfif");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+body{ 
+  background: url("background.jfif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center;
-  
+}
+
+.App{
+
   color: antiquewhite;
 }
 
@@ -25,7 +28,7 @@
 
 h1 {
   margin-top: 0px;
-  position: fixed;
+  position: relative;
   background-color: #01041f00;
   padding: auto;
   width: 100%;
@@ -36,7 +39,7 @@ h2 {
   display: flex;
   padding: auto;
   width: auto;
-  margin-left: 12.2rem;
+  margin-left: 2.8rem;
   font-size: large;
   margin-top: 2rem;
 }
@@ -45,16 +48,23 @@ label {
   margin: 2rem;
   margin-left: 0.4rem;
   padding-top: -1rem;
-  width: 100%;
+  
 }
 
 input {
   width: auto;
   margin: 0.8rem;
-  vertical-align: middle;
   display: inline-block;
-  margin-left: 10rem;
   padding: auto;
+}
+
+.button-div{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  text-align: center;
+  
 }
 
 input.name{
@@ -62,17 +72,13 @@ input.name{
   text-align: center;
   border-color: #b30b0b;
   border-radius: 0.25rem;
-  display: inline-flex;
-  margin-bottom: 6rem;
-  margin-left: 37rem;
   padding: auto;
   background-color: rgb(255, 255, 255);
 }
 
 input.enviar{
-  margin:2rem ;
-  margin-left: -8.4rem;
-  border-radius: 0.25;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
 }
 
 
@@ -90,11 +96,17 @@ input.enviar{
   justify-content: center;
 }
 
-
+.form-edit{
+  margin-left: 8rem;
+  position: relative;
+  width: auto;
+  white-space: nowrap;
+  
+}
 
 
 .modal-content{
-  width: 100%;
+  width: 95%;
   max-width: 846px;
 
   justify-content: center;
@@ -104,3 +116,5 @@ input.enviar{
 .modal-img{
   width: 100%;
 }
+
+  
