@@ -1,6 +1,39 @@
 import { Component } from "react/cjs/react.production.min";
+import * as React from 'react'
 import logoImg from '../logo-l3a.jfif'
 import emailjs from 'emailjs-com'
+
+
+
+
+export default function Counter(){
+    
+    const [seconds, setSeconds] = React.useState(0);
+    const [minutes, setMinutes] = React.useState(0);
+    const [hours, setHours] = React.useState(0);
+    
+    // eslint-disable-next-line
+    React.useEffect(() => {
+        if (seconds < 60) {
+            setTimeout(() => setSeconds(seconds + 1), 1000);
+        } if(seconds === 60) {
+            setMinutes(minutes + 1);
+            setSeconds(0)
+        }if(minutes === 60){
+            setMinutes(0);
+            setHours(hours +1);
+        }
+    });
+
+
+    return(
+        <Questions totalHours={hours} totalMinutes={minutes} totalSeconds={seconds} />
+    )
+
+}
+
+
+
 
 
 class  Questions extends Component {
@@ -93,12 +126,10 @@ class  Questions extends Component {
         var gato = 0;
         var tubarao = 0;
 
-        
-        
-        
+     
 
+        
         function resultadoPerfil(){
-
             for(let i = 0; i < 26; i++){
                 if(isActive[i] === "I" & i < 25){
                     aguia = aguia + 1;
@@ -142,7 +173,7 @@ class  Questions extends Component {
                             name="q1"
                             checked={q1 === "I" ? isActive[0] = q1 : ""}
                             onChange={this.onChange}
-                        
+                            
                         /><label>Idealista, criativo e visionário</label><br></br>
 
                     <input  type="radio"
@@ -150,7 +181,7 @@ class  Questions extends Component {
                             name="q1"
                             checked={q1 === "C" ? isActive[0] = q1 : ""}
                             onChange={this.onChange}
-                        
+                            
                         /><label>Divertido, espiritual e benéfico</label><br></br>
 
                     <input  type="radio"
@@ -158,7 +189,7 @@ class  Questions extends Component {
                             name="q1"
                             checked={q1 === "O" ? isActive[0] = q1 : ""}
                             onChange={this.onChange}
-                        
+                            
                         /><label>Confiável, meticuloso e previsível</label><br></br>
 
                     <input  type="radio"
@@ -166,7 +197,7 @@ class  Questions extends Component {
                             name="q1"
                             checked={q1 === "A" ? isActive[0] = q1 : ""}
                             onChange={this.onChange}
-                        
+                            
                         /><label>Focado, determinado e persistente</label><br></br>                 
                     
                 </div>          
@@ -962,6 +993,9 @@ class  Questions extends Component {
                     <input type='hidden'  name="tubarao" value={tubarao}/>
                     <input type='hidden'  name="gato" value={gato}/>
                     <input type='hidden' value={personName}/>
+                    <input type='hidden'  name="totalHours" value={this.props.totalHours}/>
+                    <input type='hidden'  name="totalMinutes" value={this.props.totalMinutes}/>
+                    <input type='hidden'  name="totalSeconds" value={this.props.totalSeconds}/>
                     
                     
                     
@@ -974,4 +1008,4 @@ class  Questions extends Component {
     }    
 }
 
-export default Questions;
+

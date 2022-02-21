@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 import Modal from 'react-modal/lib/components/Modal';
-import Questions from './Questions/index';
 import modalImg from './modalImg.jpg';
+import Counter from './Questions/index';
 
 Modal.setAppElement('#root');
 
 export default function App(){
   
-    var totalHours =0;
+
 
     const [isModalOpen, setIsModalOpen] = useState(true);
     function handleCloseModal(){
@@ -26,7 +26,7 @@ export default function App(){
         >
             <img alt='' src={modalImg} class='modal-img'></img>
         </Modal>
-        <Questions totalHours={totalHours}/>
+        <Counter />
 
         
         </>
